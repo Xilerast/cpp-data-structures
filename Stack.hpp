@@ -1,5 +1,4 @@
-#ifndef STACK_HPP
-#define STACK_HPP
+#pragma once
 
 #include <algorithm>
 #include <assert.h>
@@ -110,5 +109,3 @@ Stack<T> &Stack<T>::operator=(Stack<T> &&Other) noexcept
     Other.Data = nullptr;
     return *this;
 }
-
-#endif
