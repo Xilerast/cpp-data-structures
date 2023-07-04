@@ -20,9 +20,9 @@ public:
     // Destructor
     ~Stack();
 
-    void Push(const T &elem);
-    T Pop();
-    const T& Peek(int Depth) const;
+    inline void Push(const T &elem);
+    inline T Pop();
+    inline const T& Peek(int Depth) const;
 
     Stack<T>& operator=(const Stack<T> &Other); // Copy assignment
     Stack<T>& operator=(Stack<T> &&Other) noexcept; // Move assignment
@@ -64,7 +64,7 @@ Stack<T>::~Stack()
 }
 
 template <typename T>
-void Stack<T>::Push(const T &elem)
+inline void Stack<T>::Push(const T &elem)
 {
     assert(this->CurrElemNum < this->MaxElemNum);
 
@@ -72,7 +72,7 @@ void Stack<T>::Push(const T &elem)
 }
 
 template <typename T>
-T Stack<T>::Pop()
+inline T Stack<T>::Pop()
 {
     assert(this->CurrElemNum > 0);
 
@@ -80,7 +80,7 @@ T Stack<T>::Pop()
 }
 
 template <typename T>
-const T &Stack<T>::Peek(int Depth) const
+inline const T &Stack<T>::Peek(int Depth) const
 {
     assert(Depth < this->CurrElemNum);
 
